@@ -5,23 +5,22 @@
 /**
  * main - entry point
  *
- * Description: locate last digit arround 6
+ * Description: locate last digit of random number
  * Return: always 0 (Success)
  */
 int main(void)
 {
-	int n, last_digit;
+	int n;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	printf("%d n\n", n);
-	last_digit = n % 10;
-	printf("Last digit of %d is %d ", n, last_digit);
-	if (last_digit == 0)
-		printf("and is 0\n");
-	else if (last_digit < 6)
-		printf("and is less than 6 and not 0\n");
+	printf("Last digit of %d", n);
+	printf(" is %d ", n % 10);
+	if ((n % 10) > 5)
+		printf("and is greater than %d\n", 5);
+	else if ((n % 10) == 0)
+		printf("and is %d\n", 0);
 	else
-		printf("and is greater than 5\n");
+		printf("and is less than %d and not %d\n", 6, 0);
 	return (0);
 }
