@@ -9,7 +9,7 @@ int sum_of_multiples(void)
 {
 	int i, sum;
 
-	i = 11, sum = 23;
+	i = 0, sum = 0;
 	while (i < 1024)
 	{
 		if ((i % 3) == 0 || (i % 5) == 0)
