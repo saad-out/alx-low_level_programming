@@ -1,12 +1,32 @@
-#include "main.h"
+#include <stdio.h>
 
-/*
- * main - display FizzBuzz test
+/**
+ * main - print from 1 to 100, Fizz\Buzz for muliples of 3\5
+ *
  * Return: always 0
  */
 int main(void)
 {
-	FBzz();
+	int i;
+
+	i = 1;
+	while (i < 101)
+	{
+		if (i % 3 == 0 || i % 5	== 0)
+		{
+			if (i % 3 == 0)
+				printf("Fizz");
+
+			if (i % 5 == 0)
+				printf("Buzz");
+
+			putchar(' ');
+		}
+		else
+			printf("%d ", i);
+		i++;
+	}
+	putchar('\n');
 
 	return (0);
 }
