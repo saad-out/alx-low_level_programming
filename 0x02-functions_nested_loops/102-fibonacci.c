@@ -12,7 +12,7 @@ int main(void)
 
 	i = 0, n1 = 1, n2 = 2;
 	printf("%lu, %lu", n1, n2);
-	while ((i++) < 48)
+	while ((i++) < 96)
 	{
 		sum = n1 + n2;
 		printf(", %lu", sum);
