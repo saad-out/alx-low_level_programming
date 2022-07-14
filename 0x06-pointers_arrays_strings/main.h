@@ -1,6 +1,8 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <unistd.h>
+
 char *_strcat(char *dest, char *src);
 
 char *_strncat(char *dest, char *src, int n);
@@ -18,5 +20,9 @@ char *cap_string(char *s);
 char *leet(char *s);
 
 char *rot13(char *s);
+
+int _putchar(char c);
+
+void print_number(int n);
 
 #endif
