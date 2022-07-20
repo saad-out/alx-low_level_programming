@@ -17,6 +17,10 @@ int sqqrt(float n, float l, float r);
 
 int _sqrt_recursion(int n);
 
+int prime(float n, float x);
+
+int is_prime_number(int n);
+
 
 
 #endif
