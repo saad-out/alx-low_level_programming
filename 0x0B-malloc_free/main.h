@@ -13,6 +13,10 @@ void free_grid(int **grid, int height);
 
 char *argstostr(int ac, char **av);
 
+void a_free(char **s, int i);
 
+int w_count(char *s, int *arr);
+
+char **strtow(char *str);
 
 #endif
