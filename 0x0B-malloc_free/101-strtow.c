@@ -64,6 +64,9 @@ char **strtow(char *str)
 		return (0);
 
 	words = w_count(str, arr);
+	if (!words)
+		return (0);
+
 	s = malloc(sizeof(char *) * (words + 1));
 	if (!s)
 		return (0);
