@@ -54,6 +54,9 @@ char *product(char *s1, char *s2, int size1, int size2)
 	arr = malloc(sizeof(int) * (size1 + size2));
 	if (!arr)
 		_error();
+	i = 0;
+	while (i < (size2 + size1))
+		arr[i++] = 0;
 	i = size1 - 1;
 	arr[i + (size2 - 1) + 1] = 0;
 	while (i >= 0)
