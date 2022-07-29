@@ -86,6 +86,26 @@ char *product(char *s1, char *s2, int size1, int size2)
 }
 
 /**
+ * leading_0 - check for leading zeros
+ * @s: given string
+ * Return: new length (int)
+ */
+int leading_0(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[0] != '\0')
+	{
+		if (s[0] != '0')
+			break;
+		i++;
+		s++;
+	}
+	return (i);
+}
+
+/**
  * main - printf product of two numbers
  * @argc: arguments count
  * @argv: arguments vector (array of strings)
@@ -98,14 +118,15 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 		_error();
-	s1 = _strlend(argv[1]);
-	s2 = _strlend(argv[2]);
-	if ((s1 == 1 && argv[1][0] == '0') || (s2 == 1 && argv[2][0] == '0'))
+	argv[1] += leading_0(argv[1]), argv[2] += leading_0(argv[2]);
+	s1 = _strlend(argv[1]), s2 = _strlend(argv[2]);
+	if (!s1 || !s2)
 	{
 		_putchar('0');
 		_putchar('\n');
 		return (0);
 	}
+
 	s = product(argv[1], argv[2], s1, s2);
 	i = 0;
 	while (s[i] != '\0')
