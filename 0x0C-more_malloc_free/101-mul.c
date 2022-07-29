@@ -18,7 +18,7 @@ void _error(void)
 }
 
 /**
- * _strlen - calulate length of string of digits
+ * _strlend - calulate length of string of digits
  * @s: string given
  * Return: length of string (int) (Success) | 98 (Failure) {exit}
  */
