@@ -21,4 +21,6 @@ int _strlend(char *s);
 
 void _error(void);
 
+int main(int argc, char *argv[]);
+
 #endif /* MAIN_H */
