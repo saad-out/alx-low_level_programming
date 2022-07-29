@@ -103,6 +103,7 @@ int main(int argc, char *argv[])
 	if ((s1 == 1 && argv[1][0] == '0') || (s2 == 1 && argv[2][0] == '0'))
 	{
 		_putchar('0');
+		_putchar('\n');
 		return (0);
 	}
 	s = product(argv[1], argv[2], s1, s2);
