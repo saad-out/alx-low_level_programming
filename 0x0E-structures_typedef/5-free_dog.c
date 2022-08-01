@@ -8,6 +8,6 @@
  */
 void free_dog(dog_t *d)
 {
-	free(d);
-	d = 0;
+	if (d)
+		free(d);
 }
