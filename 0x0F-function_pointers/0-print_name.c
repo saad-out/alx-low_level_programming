@@ -9,18 +9,7 @@
  */
 void print_name(char *name, void (*f)(char *))
 {
-	int i;
-	char *s;
-
-	if (!name || name[0] == '\0')
+	if (!name || !f)
 		return;
-	for (i = 0; name[i] != '\0'; i++)
-
-	s = malloc(sizeof(char) * (i + 1));
-	if (!s)
-		return;
-	for (i = 0; name[i] != '\0'; i++)
-		s[i] = name[i];
-	s[i] = '\0';
-	f(s);
+	f(name);
 }
