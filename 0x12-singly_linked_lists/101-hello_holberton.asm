@@ -11,8 +11,8 @@ main:
 	mov rdi, msg
 	call     printf WRT ..plt
 
-	leave
-	ret
+	mov eax, 1
+	int 0x80
 
 section .data
 	 msg     db  'Hello, Holberton', 10, 0
