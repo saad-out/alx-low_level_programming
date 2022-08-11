@@ -1,18 +1,9 @@
-extern printf
-
-section .text
-
-global main
-
+	global    main
+	extern    printf
 main:
-	push rbp
-	mov rbp, rsp
-
-	mov rdi, msg
-	call     printf WRT ..plt
-
-	mov eax, 1
-	int 0x80
-
-section .data
-	 msg     db  'Hello, Holberton', 10, 0
+	  mov   edi, format
+	  xor   eax, eax
+	  call  printf
+	  mov 	eax, 0
+	  ret
+format: db `Hello, Holberton\n`,0
