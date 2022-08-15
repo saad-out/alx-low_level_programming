@@ -14,6 +14,9 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	listint_t *tmp, *new;
 	unsigned int i;
 
+	if (!idx)
+		return (add_head(head, n));
+
 	tmp = *head;
 	for (i = 0; i < idx - 1; i++)
 	{
@@ -31,4 +34,27 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new->n = n, new->next = tmp->next;
 	tmp->next = new;
 	return (new);
+}
+
+/**
+ * add_head - add node as head of given listint_t
+ * @head: head node
+ * @n: new node's data n
+ *
+ * Return: pointer to new allocated head
+ */
+listint_t *add_head(listint_t **head, int n)
+{
+	listint_t *tmp;
+
+	if (!(*head))
+		return (0);
+
+	tmp = malloc(sizeof(listint_t));
+	if (!tmp)
+		return (0);
+
+	tmp->n = n, tmp->next = *head;
+	*head = tmp;
+	return (tmp);
 }
