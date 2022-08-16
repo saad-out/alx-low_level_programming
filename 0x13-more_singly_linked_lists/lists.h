@@ -32,4 +32,7 @@ int delete_nodeint_at_index(listint_t **, unsigned int);
 int del_head(listint_t **);
 listint_t *reverse_listint(listint_t **);
 listint_t *rev_with_recursion(listint_t *, listint_t **, listint_t *);
+size_t print_listint_safe(const listint_t *);
+int is_visited(const listint_t **, const listint_t *);
+
 #endif /* H */
