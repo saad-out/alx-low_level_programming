@@ -30,5 +30,6 @@ listint_t *insert_nodeint_at_index(listint_t **, unsigned int, int);
 listint_t *add_head(listint_t **, int);
 int delete_nodeint_at_index(listint_t **, unsigned int);
 int del_head(listint_t **);
-
+listint_t *reverse_listint(listint_t **);
+listint_t *rev_with_recursion(listint_t *, listint_t **, listint_t *);
 #endif /* H */
