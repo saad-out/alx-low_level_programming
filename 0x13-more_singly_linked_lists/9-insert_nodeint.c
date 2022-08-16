@@ -47,9 +47,6 @@ listint_t *add_head(listint_t **head, int n)
 {
 	listint_t *tmp;
 
-	if (!(*head))
-		return (0);
-
 	tmp = malloc(sizeof(listint_t));
 	if (!tmp)
 		return (0);
