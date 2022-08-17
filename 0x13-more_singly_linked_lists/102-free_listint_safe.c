@@ -29,7 +29,7 @@ int is_visited2(void **visited, void *p)
  */
 size_t free_listint_safe(listint_t **h)
 {
-	void *visited[100];
+	void *visited[200];
 	listint_t *tmp, *next;
 	size_t i;
 
@@ -37,17 +37,17 @@ size_t free_listint_safe(listint_t **h)
 	if (!h)
 		return (0);
 
-	for (i = 0; i < 100; i++)
+	for (i = 0; i < 200; i++)
 		visited[i] = 0;
 	tmp = *h, i = 0;
 	while (tmp)
 	{
 		if (is_visited2(visited, (void *)tmp))
 			break;
+		visited[i++] = (void *)tmp;
 		next = tmp->next;
 		free(tmp);
 		tmp = next;
-		visited[i++] = (void *)tmp;
 	}
 	*h = 0;
 	return (i);
