@@ -36,5 +36,6 @@ size_t print_listint_safe(const listint_t *);
 int is_visited(const listint_t **, const listint_t *);
 int is_visited2(void **, void *);
 size_t free_listint_safe(listint_t **);
+listint_t *find_listint_loop(listint_t *);
 
 #endif /* H */
