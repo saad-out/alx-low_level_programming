@@ -29,7 +29,7 @@ int is_visited(const listint_t **visited, const listint_t *node)
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *visited[100];
+	const listint_t *visited[150];
 	const listint_t *tmp;
 	int flag;
 	size_t i;
@@ -37,7 +37,7 @@ size_t print_listint_safe(const listint_t *head)
 	if (!head)
 		return (0);
 
-	for (i = 0; i < 100; i++)
+	for (i = 0; i < 150; i++)
 		visited[i] = 0;
 
 	tmp = head, i = 0, flag = 0;
