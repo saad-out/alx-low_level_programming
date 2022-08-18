@@ -14,4 +14,10 @@ int set_bit(unsigned long int *, unsigned int);
 void convert_to_binary(unsigned long int, unsigned short *);
 
 unsigned long int convert_to_decimal(unsigned short *);
+
+int clear_bit(unsigned long int *, unsigned int);
+
+void convert_to_binary2(unsigned long int, unsigned short *);
+
+unsigned long int convert_to_decimal2(unsigned short *);
 #endif /* H */
