@@ -24,4 +24,6 @@ unsigned long int convert_to_decimal2(unsigned short *);
 unsigned int flip_bits(unsigned long int , unsigned long int);
 
 void convert_to_binary3(unsigned long int, unsigned short *);
+
+int get_endianness(void);
 #endif /* H */
