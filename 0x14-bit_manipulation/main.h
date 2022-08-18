@@ -7,4 +7,6 @@ int _putchar(char );
 
 void print_binary(unsigned long int);
 
+int get_bit(unsigned long int, unsigned int);
+
 #endif /* H */
