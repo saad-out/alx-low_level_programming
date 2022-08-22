@@ -29,7 +29,7 @@ int main(int ac, char **av)
 			dprintf(2, "Error: Can't read from file %s\n", av[1]), exit(98);
 		j = write(fd_to, buffer, i);
 		if (j == -1 || j != i)
-			dprintf(2, "Error: Can't write to %s\n", av[2]), exit(99);
+			dprintf(2, "Error: Can't write to %s\n", av[2]), close(fd_from), exit(99);
 	} while (i);
 
 
