@@ -35,7 +35,13 @@ int main(int ac, char **av)
 
 	i = close(fd_from), j = close(fd_to);
 	if (i || j)
-		dprintf(2, "Error: Can't close fd %ld\n", (i) ? (i) : (j)), exit(100);
+	{
+		if (i)
+			dprintf(2, "Error: Can't close fd %d\n", fd_from);
+		if (j)
+			dprintf(2, "Error: Can't close fd %d\n", fd_to);
+		exit(100);
+	}
 
 	return (0);
 }
