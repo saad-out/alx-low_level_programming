@@ -13,7 +13,7 @@ int main(int ac, char **av)
 	char buffer[1024];
 	ssize_t i, j;
 
-	if (ac != 3 || (av[1][0] == '\0' || av[2][0] == '\0'))
+	if (ac != 3)
 		dprintf(2, "Usage: cp file_from file_to\n"), exit(97);
 
 	fd_from = open(av[1], O_RDONLY);
