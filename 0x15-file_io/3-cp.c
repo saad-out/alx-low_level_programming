@@ -19,17 +19,17 @@ int main(int ac, char **av)
 	fd_from = open(av[1], O_RDONLY);
 	fd_to = open(av[2], O_CREAT | O_WRONLY | O_APPEND | O_TRUNC, 0664);
 	if (fd_from == -1)
-		dprintf(2, "Error: Can't read from file %s\n", av[1]), exit(98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 	if (fd_to == -1)
-		dprintf(2, "Error: Can't write to %s\n", av[2]), exit(99);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 
 	do {
 		i = read(fd_from, buffer, 1024);
 		if (i == -1)
-			dprintf(2, "Error: Can't read from file %s\n", av[1]), exit(98);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]), exit(98);
 		j = write(fd_to, buffer, i);
 		if (j == -1 || j != i)
-			dprintf(2, "Error: Can't write to %s\n", av[2]), close(fd_from), exit(99);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]), exit(99);
 	} while (i);
 
 
@@ -37,9 +37,9 @@ int main(int ac, char **av)
 	if (i || j)
 	{
 		if (i)
-			dprintf(2, "Error: Can't close fd %d\n", fd_from);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
 		if (j)
-			dprintf(2, "Error: Can't close fd %d\n", fd_to);
+			dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
 		exit(100);
 	}
 
