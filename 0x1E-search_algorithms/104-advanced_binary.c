@@ -39,7 +39,7 @@ int first_value(int *array, int value, int index)
 	if (!array)
 		return (index);
 
-	if (array[index] != value)
+	if (index < 0 || array[index] != value)
 		return (index + 1);
 	return (first_value(array, value, index - 1));
 }
@@ -61,7 +61,8 @@ int binary_search(int *array, int value, int left, int right)
 		return (-1);
 
 	print_array(array, left, right);
-	mid = (left + right) / 2;
+	/* mid = (left + right) / 2; */
+	mid = left + ((right - left) / 2);
 	if (array[mid] == value)
 		return (first_value(array, value, mid));
 
