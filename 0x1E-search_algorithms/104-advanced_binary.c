@@ -45,6 +45,33 @@ int first_value(int *array, int value, int index)
 }
 
 /**
+ * binary_search - binary search using recursion
+ * @array: array to search in
+ * @value: value to search for
+ * @left: left index
+ * @right: right index
+ *
+ * Return: index of value if it exists
+ */
+int binary_search(int *array, int value, int left, int right)
+{
+	int mid;
+
+	if (!array || left > right)
+		return (-1);
+
+	print_array(array, left, right);
+	mid = (left + right) / 2;
+	if (array[mid] == value)
+		return (first_value(array, value, mid));
+
+	if (array[mid] < value)
+		return (binary_search(array, value, mid + 1, right));
+	else
+		return (binary_search(array, value, left, mid - 1));
+}
+
+/**
  * advanced_binary - searches for value using advanced binary search algorithm
  * @array: array to search in
  * @size: array's size
@@ -54,24 +81,8 @@ int first_value(int *array, int value, int index)
  */
 int advanced_binary(int *array, size_t size, int value)
 {
-	int left, right, mid;
-
 	if (!array)
 		return (-1);
 
-	left = 0, right = (int)size - 1;
-	while (left <= right)
-	{
-		print_array(array, left, right);
-
-		mid = (left + right) / 2;
-		if (array[mid] == value)
-			return (first_value(array, value, mid));
-		else if (array[mid] < value)
-			left = mid + 1;
-		else
-			right = mid - 1;
-	}
-
-	return (-1);
+	return (binary_search(array, value, 0, (int)size - 1));
 }
