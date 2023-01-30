@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdbool.h>
 #include <math.h>
 #include "search_algos.h"
 
@@ -14,7 +13,7 @@
 listint_t *jump_list(listint_t *list, size_t size, int value)
 {
 	size_t i;
-	bool more;
+	short more;
 	listint_t *start, *end;
 
 	if (!list)
